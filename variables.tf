@@ -1,0 +1,36 @@
+# ---------------------------------------------------------------------------------------------------------------------
+# MISC
+# ---------------------------------------------------------------------------------------------------------------------
+variable "name_preffix" {
+  description = "Name preffix for resources on AWS"
+}
+
+# ---------------------------------------------------------------------------------------------------------------------
+# AWS CREDENTIALS AND REGION
+# ---------------------------------------------------------------------------------------------------------------------
+variable "profile" {
+  description = "AWS API key credentials to use"
+}
+
+variable "region" {
+  description = "AWS Region the infrastructure is hosted in"
+}
+
+# ---------------------------------------------------------------------------------------------------------------------
+# AWS CLOUDWATCH LOG GROUP
+# ---------------------------------------------------------------------------------------------------------------------
+variable "log_group_name" {
+  description = "The name of the log group. If omitted, Terraform will assign a random, unique name."
+}
+
+variable "log_group_retention_in_days" {
+  description = "(Optional) Specifies the number of days you want to retain log events in the specified log group. Default to 30 days"
+  type        = number
+  default     = 30
+}
+
+variable "log_group_kms_key_id" {
+  description = "The ARN of the KMS Key to use when encrypting log data. Please note, after the AWS KMS CMK is disassociated from the log group, AWS CloudWatch Logs stops encrypting newly ingested data for the log group. All previously ingested data remains encrypted, and AWS CloudWatch Logs requires permissions for the CMK whenever the encrypted data is requested."
+  default     = ""
+}
+
