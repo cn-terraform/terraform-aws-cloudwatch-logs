@@ -2,6 +2,8 @@
 
 This Terraform module deploys an AWS CloudWatch Log Stream and Group.
 
+[![CircleCI](https://circleci.com/gh/jnonino/terraform-aws-cloudwatch-logs/tree/master.svg?style=svg)](https://circleci.com/gh/jnonino/terraform-aws-cloudwatch-logs/tree/master)
+
 ## Usage
 
 Check valid versions on:
