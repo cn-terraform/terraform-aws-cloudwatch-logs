@@ -14,15 +14,15 @@ Check valid versions on:
             source  = "jnonino/cloudwatch-logs/aws"
             version = "1.0.0"
 
-            name_preffix                = var.name_preffix
+            logs_path                   = "/ecs/service1/logs"
             profile                     = var.profile
             region                      = var.region
-            log_group_name              = var.log_group_name
             log_group_retention_in_days = var.log_group_retention_in_days
             log_group_kms_key_id        = var.log_group_kms_key_id
         }
 
 ## Output values
 
+* logs_path: Path of the logs in CloudWatch
 * log_group_arn: The Amazon Resource Name (ARN) specifying the log group.
 * log_stream_arn: The Amazon Resource Name (ARN) specifying the log stream.

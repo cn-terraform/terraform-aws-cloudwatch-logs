@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------------------------------------
 # MISC
 # ---------------------------------------------------------------------------------------------------------------------
-variable "name_preffix" {
-  description = "Name preffix for resources on AWS"
+variable "logs_path" {
+  description = "Path of the logs in CloudWatch"
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -19,10 +19,6 @@ variable "region" {
 # ---------------------------------------------------------------------------------------------------------------------
 # AWS CLOUDWATCH LOG GROUP
 # ---------------------------------------------------------------------------------------------------------------------
-variable "log_group_name" {
-  description = "The name of the log group. If omitted, Terraform will assign a random, unique name."
-}
-
 variable "log_group_retention_in_days" {
   description = "(Optional) Specifies the number of days you want to retain log events in the specified log group. Default to 30 days"
   type        = number
