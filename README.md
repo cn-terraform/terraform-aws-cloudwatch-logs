@@ -13,7 +13,6 @@ Check valid versions on:
         module "aws-cw-logs": 
             source  = "jnonino/cloudwatch-logs/aws"
             version = "1.0.0"
-
             logs_path                   = "/ecs/service1/logs"
             profile                     = var.profile
             region                      = var.region
