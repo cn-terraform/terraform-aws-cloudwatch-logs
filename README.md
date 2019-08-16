@@ -10,7 +10,7 @@ Check valid versions on:
 * Github Releases: <https://github.com/jnonino/terraform-aws-cloudwatch-logs/releases>
 * Terraform Module Registry: <https://registry.terraform.io/modules/jnonino/cloudwatch-logs/aws>
 
-        module "aws-cw-logs": 
+        module "aws-cw-logs" {
             source  = "jnonino/cloudwatch-logs/aws"
             version = "1.0.0"
             logs_path                   = "/ecs/service1/logs"
