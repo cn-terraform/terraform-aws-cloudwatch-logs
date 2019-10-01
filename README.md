@@ -2,22 +2,22 @@
 
 This Terraform module deploys an AWS CloudWatch Log Stream and Group.
 
-[![CircleCI](https://circleci.com/gh/jnonino/terraform-aws-cloudwatch-logs/tree/master.svg?style=svg)](https://circleci.com/gh/jnonino/terraform-aws-cloudwatch-logs/tree/master)
-[![](https://img.shields.io/github/license/jnonino/terraform-aws-cloudwatch-logs)](https://github.com/jnonino/terraform-aws-cloudwatch-logs)
-[![](https://img.shields.io/github/issues/jnonino/terraform-aws-cloudwatch-logs)](https://github.com/jnonino/terraform-aws-cloudwatch-logs)
-[![](https://img.shields.io/github/issues-closed/jnonino/terraform-aws-cloudwatch-logs)](https://github.com/jnonino/terraform-aws-cloudwatch-logs)
-[![](https://img.shields.io/github/languages/code-size/jnonino/terraform-aws-cloudwatch-logs)](https://github.com/jnonino/terraform-aws-cloudwatch-logs)
-[![](https://img.shields.io/github/repo-size/jnonino/terraform-aws-cloudwatch-logs)](https://github.com/jnonino/terraform-aws-cloudwatch-logs)
+[![CircleCI](https://circleci.com/gh/cn-terraform/terraform-aws-cloudwatch-logs/tree/master.svg?style=svg)](https://circleci.com/gh/cn-terraform/terraform-aws-cloudwatch-logs/tree/master)
+[![](https://img.shields.io/github/license/cn-terraform/terraform-aws-cloudwatch-logs)](https://github.com/cn-terraform/terraform-aws-cloudwatch-logs)
+[![](https://img.shields.io/github/issues/cn-terraform/terraform-aws-cloudwatch-logs)](https://github.com/cn-terraform/terraform-aws-cloudwatch-logs)
+[![](https://img.shields.io/github/issues-closed/cn-terraform/terraform-aws-cloudwatch-logs)](https://github.com/cn-terraform/terraform-aws-cloudwatch-logs)
+[![](https://img.shields.io/github/languages/code-size/cn-terraform/terraform-aws-cloudwatch-logs)](https://github.com/cn-terraform/terraform-aws-cloudwatch-logs)
+[![](https://img.shields.io/github/repo-size/cn-terraform/terraform-aws-cloudwatch-logs)](https://github.com/cn-terraform/terraform-aws-cloudwatch-logs)
 
 ## Usage
 
 Check valid versions on:
-* Github Releases: <https://github.com/jnonino/terraform-aws-cloudwatch-logs/releases>
-* Terraform Module Registry: <https://registry.terraform.io/modules/jnonino/cloudwatch-logs/aws>
+* Github Releases: <https://github.com/cn-terraform/terraform-aws-cloudwatch-logs/releases>
+* Terraform Module Registry: <https://registry.terraform.io/modules/cn-terraform/cloudwatch-logs/aws>
 
         module "aws-cw-logs" {
-            source  = "jnonino/cloudwatch-logs/aws"
-            version = "1.0.0"
+            source  = "cn-terraform/cloudwatch-logs/aws"
+            version = "1.0.3"
             logs_path                   = "/ecs/service1/logs"
             profile                     = var.profile
             region                      = var.region
