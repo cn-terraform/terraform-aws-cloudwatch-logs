@@ -17,7 +17,7 @@ Check valid versions on:
 
         module "aws-cw-logs" {
             source  = "cn-terraform/cloudwatch-logs/aws"
-            version = "1.0.3"
+            version = "1.0.4"
             logs_path                   = "/ecs/service1/logs"
             profile                     = var.profile
             region                      = var.region
