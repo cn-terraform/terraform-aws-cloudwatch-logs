@@ -15,16 +15,6 @@ Check valid versions on:
 * Github Releases: <https://github.com/cn-terraform/terraform-aws-cloudwatch-logs/releases>
 * Terraform Module Registry: <https://registry.terraform.io/modules/cn-terraform/cloudwatch-logs/aws>
 
-        module "aws-cw-logs" {
-            source  = "cn-terraform/cloudwatch-logs/aws"
-            version = "1.0.4"
-            logs_path                   = "/ecs/service1/logs"
-            profile                     = var.profile
-            region                      = var.region
-            log_group_retention_in_days = var.log_group_retention_in_days
-            log_group_kms_key_id        = var.log_group_kms_key_id
-        }
-
 ## Output values
 
 * logs_path: Path of the logs in CloudWatch
