@@ -2,7 +2,7 @@
 
 This Terraform module deploys an AWS CloudWatch Log Stream and Group.
 
-[![CircleCI](https://circleci.com/gh/cn-terraform/terraform-aws-cloudwatch-logs.svg?style=svg)](https://circleci.com/gh/cn-terraform/terraform-aws-cloudwatch-logs)
+[![](https://github.com/cn-terraform/terraform-aws-cloudwatch-logs/workflows/terraform/badge.svg)](https://github.com/cn-terraform/terraform-aws-cloudwatch-logs/actions?query=workflow%3Aterraform)
 [![](https://img.shields.io/github/license/cn-terraform/terraform-aws-cloudwatch-logs)](https://github.com/cn-terraform/terraform-aws-cloudwatch-logs)
 [![](https://img.shields.io/github/issues/cn-terraform/terraform-aws-cloudwatch-logs)](https://github.com/cn-terraform/terraform-aws-cloudwatch-logs)
 [![](https://img.shields.io/github/issues-closed/cn-terraform/terraform-aws-cloudwatch-logs)](https://github.com/cn-terraform/terraform-aws-cloudwatch-logs)
