@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "us-east-1"
-}
-
 module "logs" {
   source                      = "../../"
   logs_path                   = "test-path"
