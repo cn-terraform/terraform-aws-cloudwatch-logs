@@ -5,6 +5,12 @@ variable "logs_path" {
   description = "Path of the logs in CloudWatch"
 }
 
+variable "tags" {
+  type        = map(string)
+  default     = {}
+  description = "Resource tags"
+}
+
 #------------------------------------------------------------------------------
 # AWS CLOUDWATCH LOG GROUP
 #------------------------------------------------------------------------------
