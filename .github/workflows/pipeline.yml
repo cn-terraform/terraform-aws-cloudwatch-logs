@@ -45,7 +45,7 @@ jobs:
         dir: ['examples/encrypted-create-key', 'examples/encrypted-custom-key', 'examples/no_encryption']
       }
     services:
-      localstack:
+      localhost:
         image: localstack/localstack
         env:
           SERVICES: apigateway,cloudformation,cloudwatch,dynamodb,es,firehose,iam,kinesis,lambda,route53,redshift,s3,secretsmanager,ses,sns,sqs,ssm,stepfunctions,sts
