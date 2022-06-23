@@ -24,7 +24,7 @@ jobs:
     container: hashicorp/terraform
     strategy:
       matrix: {
-        dir: ['examples/ecnrypted-custom-key', 'examples/encrypted-create-key', 'examples/no_encryption']
+        dir: ['examples/encrypted-create-key', 'examples/encrypted-custom-key', 'examples/no_encryption']
       }
     steps:
       - name: Checkout repository
@@ -41,7 +41,7 @@ jobs:
     container: hashicorp/terraform
     strategy:
       matrix: {
-        dir: ['examples/ecnrypted-custom-key', 'examples/encrypted-create-key', 'examples/no_encryption']
+        dir: ['examples/encrypted-create-key', 'examples/encrypted-custom-key', 'examples/no_encryption']
       }
     services:
       localstack:
@@ -66,7 +66,7 @@ jobs:
     name: Show infracost diff
     strategy:
       matrix: {
-        dir: ['examples/ecnrypted-custom-key', 'examples/encrypted-create-key', 'examples/no_encryption']
+        dir: ['examples/encrypted-create-key', 'examples/encrypted-custom-key', 'examples/no_encryption']
       }
     steps:
       - name: Check out repository
