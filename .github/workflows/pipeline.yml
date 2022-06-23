@@ -48,7 +48,8 @@ jobs:
         image: localstack/localstack
         env:
           SERVICES: apigateway,cloudformation,cloudwatch,dynamodb,es,firehose,iam,kinesis,lambda,route53,redshift,s3,secretsmanager,ses,sns,sqs,ssm,stepfunctions,sts
-          DATA_DIR: /tmp/localstack/data
+          DOCKER_HOST: unix:///var/run/docker.sock
+          EDGE_BIND_HOST: 0.0.0.0
         ports: ["4566:4566"]
     steps:
       - name: Checkout repository
