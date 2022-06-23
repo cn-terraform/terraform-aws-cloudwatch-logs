@@ -40,6 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     container: hashicorp/terraform
     strategy:
+      max-parallel: 1
       matrix: {
         dir: ['examples/encrypted-create-key', 'examples/encrypted-custom-key', 'examples/no_encryption']
       }
@@ -50,7 +51,8 @@ jobs:
           SERVICES: apigateway,cloudformation,cloudwatch,dynamodb,es,firehose,iam,kinesis,lambda,route53,redshift,s3,secretsmanager,ses,sns,sqs,ssm,stepfunctions,sts
           DOCKER_HOST: unix:///var/run/docker.sock
           EDGE_BIND_HOST: 0.0.0.0
-        ports: ["4566:4566"]
+        ports:
+          - 4566:4566
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
