@@ -4,6 +4,11 @@ on:
   pull_request:
     types: [opened, reopened, synchronize]
 
+env:
+  DEFAULT_REGION: us-east-1
+  AWS_ACCESS_KEY_ID: localstack
+  AWS_SECRET_ACCESS_KEY: localstack
+
 jobs:
   check-format:
     runs-on: ubuntu-latest
@@ -38,9 +43,21 @@ jobs:
       matrix: {
         dir: ['examples/ecnrypted-custom-key', 'examples/encrypted-create-key', 'examples/no_encryption']
       }
+    services:
+      localstack:
+        image: localstack/localstack
+        env:
+          SERVICES: apigateway,cloudformation,cloudwatch,dynamodb,es,firehose,iam,kinesis,lambda,route53,redshift,s3,secretsmanager,ses,sns,sqs,ssm,stepfunctions,sts
+          DATA_DIR: /tmp/localstack/data
+        ports: ["4566:4566"]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+      - name: Configure localstack
+        run: |
+          aws configure set default.region $DEFAULT_REGION
+          aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+          aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
       - name: Terraform Init
         run: terraform init -upgrade
         working-directory: ${{ matrix.dir }}
