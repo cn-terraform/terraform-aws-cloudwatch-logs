@@ -2,7 +2,12 @@ name: Terraform
 on:
   push:
   pull_request:
-    types: [opened, reopened, synchronize]
+    types: [opened, reopened]
+
+env:
+  DEFAULT_REGION: us-east-1
+  AWS_ACCESS_KEY_ID: localstack
+  AWS_SECRET_ACCESS_KEY: localstack
 
 jobs:
   check-format:
@@ -19,7 +24,7 @@ jobs:
     container: hashicorp/terraform
     strategy:
       matrix: {
-        dir: ['examples/test']
+        dir: ['examples/encrypted-create-key', 'examples/encrypted-custom-key', 'examples/no_encryption']
       }
     steps:
       - name: Checkout repository
@@ -36,8 +41,15 @@ jobs:
     container: hashicorp/terraform
     strategy:
       matrix: {
-        dir: ['examples/test']
+        dir: ['examples/encrypted-create-key', 'examples/encrypted-custom-key', 'examples/no_encryption']
       }
+    services:
+      localstack:
+        image: localstack/localstack
+        env:
+          SERVICES: apigateway,cloudformation,cloudwatch,dynamodb,es,firehose,iam,kinesis,lambda,route53,redshift,s3,secretsmanager,ses,sns,sqs,ssm,stepfunctions,sts
+        ports:
+          - 4566:4566
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -53,7 +65,7 @@ jobs:
     name: Show infracost diff
     strategy:
       matrix: {
-        dir: ['examples/test']
+        dir: ['examples/encrypted-create-key', 'examples/encrypted-custom-key', 'examples/no_encryption']
       }
     steps:
       - name: Check out repository
