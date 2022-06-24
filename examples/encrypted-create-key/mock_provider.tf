@@ -14,8 +14,6 @@ provider "aws" {
   skip_requesting_account_id  = true
   skip_metadata_api_check     = true
   s3_use_path_style           = true
-  # access_key                  = "localstack"
-  # secret_key                  = "localstack"
 
   endpoints {
     apigateway     = "http://localstack:4566"

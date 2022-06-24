@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     container: hashicorp/terraform
     strategy:
-      max-parallel: 1
+      # max-parallel: 1
       matrix: {
         dir: ['examples/encrypted-create-key', 'examples/encrypted-custom-key', 'examples/no_encryption']
       }
