@@ -12,7 +12,7 @@ resource "aws_kms_key" "encryption_key" {
   policy = templatefile("${path.module}/templates/kms_key_policy.tftpl", {
     policy_id  = "encryption-${var.logs_path}",
     account_id = data.aws_caller_identity.current.account_id,
-    region     = data.aws_region.current.name
+    region     = data.aws_region.current.region
   })
 }
 
