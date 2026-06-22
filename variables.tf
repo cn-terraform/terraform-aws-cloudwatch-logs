@@ -30,4 +30,5 @@ variable "log_group_retention_in_days" {
 
 variable "logs_path" {
   description = "Path of the logs in CloudWatch"
+  type        = string
 }

@@ -7,10 +7,10 @@ data "aws_region" "current" {}
 resource "aws_kms_key" "encryption_key" {
   count = var.create_kms_key ? 1 : 0
 
-  description         = "KMS key to encrypt logs in group ${var.logs_path}"
+  description         = format("KMS key to encrypt logs in group %s", var.logs_path)
   enable_key_rotation = true
   policy = templatefile("${path.module}/templates/kms_key_policy.tftpl", {
-    policy_id  = "encryption-${var.logs_path}",
+    policy_id  = format("encryption-%s", var.logs_path),
     account_id = data.aws_caller_identity.current.account_id,
     region     = data.aws_region.current.region
   })
